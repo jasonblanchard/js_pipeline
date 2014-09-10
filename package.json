@@ -13,7 +13,9 @@
   },
   "devDependencies": {
     "broccoli-sass": "~0.2.2",
-    "broccoli-bower": "~0.2.1"
+    "broccoli-bower": "~0.2.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

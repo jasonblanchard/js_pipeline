@@ -8,6 +8,6 @@ var timer = function() {
       setTime();
     }, 1000);
   })();
-}
+};
 
 export default timer;
