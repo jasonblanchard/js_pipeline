@@ -25,12 +25,19 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'dist/', src: ['**'], dest: ''}
         ]
       }
+    },
+    broccoli: {
+      dist: {
+        dest: 'dist'
+      }
     }
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-aws-s3');
+  grunt.loadNpmTasks('grunt-broccoli');
+
+  grunt.registerTask('deploy', ['broccoli:dist:build', 'aws_s3']);
 
   grunt.registerTask('default', 'Log default stuff', function() {
     grunt.log.write("Logging some default stuff...").ok();
