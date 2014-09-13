@@ -9,13 +9,13 @@ var concat = require('broccoli-concat'),
   app = pickFiles(app, {
       srcDir: '/',
         destDir: 'appkit' // move under appkit namespace
-  })
+  });
 
   var styles = 'styles';
   styles = pickFiles(styles, {
       srcDir: '/',
         destDir: 'appkit'
-  })
+  });
 
   var vendor = 'vendor'
 

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        'esnext': true
+        'jshintrc': true
       },
       src: ['app/*.js']
     },

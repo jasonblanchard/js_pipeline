@@ -1,7 +1,11 @@
+$header: rgb(209, 251, 223);
+$text: white;
+
 body {
   background: blue;
+  color: $text;
 
-  p {
-    color: white;
+  h1 {
+    color: $header;
   }
 }
