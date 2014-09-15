@@ -3,12 +3,21 @@ var concat = require('broccoli-concat'),
   compileSass = require('broccoli-sass'),
   findBowerTrees = require('broccoli-bower'),
   compileES6 = require('broccoli-es6-concatenator'),
+  filterReact = require('broccoli-react'),
   mergeTrees = require('broccoli-merge-trees');
+
+  var ui = 'app/ui';
+  ui = pickFiles(ui, {
+    srcDir: '/',
+    destDir: 'ui'
+  });
+
+  ui = filterReact(ui);
 
   var app = 'app';
   app = pickFiles(app, {
-      srcDir: '/',
-        destDir: 'appkit' // move under appkit namespace
+    srcDir: '/',
+    destDir: 'appkit' // move under appkit namespace
   });
 
   var styles = 'styles';
@@ -31,13 +40,13 @@ var concat = require('broccoli-concat'),
     ],
     legacyFilesToAppend: [
       'jquery.js',
-      'moment.js'
+      'moment.js',
+      'react.js'
     ],
     outputFile: '/assets/app.js'
   });
 
   var appCss = compileSass(sourceTrees, 'appkit/style.scss', 'assets/app.css')
+var publicFiles = 'public';
 
-  var publicFiles = 'public';
-
-  module.exports = mergeTrees([appJs, appCss, publicFiles]);
+  module.exports = mergeTrees([appJs, appCss, publicFiles, ui]);

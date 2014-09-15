@@ -7,5 +7,4 @@ export default function() {
   console.log('from app.js');
   timer();
   songs();
-
 }
